@@ -1,0 +1,14 @@
+package stdlib.security.asn1;
+
+import stdlib.security.asn1.pcks.PKCSObjectIdentifiers;
+
+public interface CMSObjectIdentifiers
+{
+    static final DERObjectIdentifier    data = PKCSObjectIdentifiers.data;
+    static final DERObjectIdentifier    signedData = PKCSObjectIdentifiers.signedData;
+    static final DERObjectIdentifier    envelopedData = PKCSObjectIdentifiers.envelopedData;
+    static final DERObjectIdentifier    signedAndEnvelopedData = PKCSObjectIdentifiers.signedAndEnvelopedData;
+    static final DERObjectIdentifier    digestedData = PKCSObjectIdentifiers.digestedData;
+    static final DERObjectIdentifier    encryptedData = PKCSObjectIdentifiers.encryptedData;
+    static final DERObjectIdentifier    compressedData = PKCSObjectIdentifiers.id_ct_compressedData;
+}
