@@ -32,7 +32,7 @@ The software can be used by any Java application and the available features of t
 
 ### **The TorrentEngineCore “API” class provides the following methods:**
 
-**void start()**
+#### void start()
 
  **Description:** Starts the main core of the engine
 
@@ -41,7 +41,7 @@ Examples:
     TorrentEngineCore core= AzureusCoreFactory.create();
     core.start();
 
-**void stop()**
+#### void stop()
 
  **Description:** If requestStop() fails to stop the core then, force stop is called.
 
@@ -50,23 +50,23 @@ Examples:
     TorrentEngineCore core= AzureusCoreFactory.create();
       core.stop();    
 
-**boolean canStart()**
+#### boolean canStart()
 
  **Description:** Checks whether core can be started or not.
 
-**static boolean isCoreAvailable()**
+#### static boolean isCoreAvailable()
 
  **Description:** Returns true if core is available, false otherwise.
 
-**static boolean isCoreRunning()**
+#### static boolean isCoreRunning()
 
  **Description:** Returns true if core is running, false otherwise.
 
-**boolean isInitThread()**
+#### boolean isInitThread()
 
  **Description:** Returns true if thread is initialized already, else false.
 
-**void requestStop()**
+#### void requestStop()
 
  **Description:** Normal core stop request.
  
@@ -74,7 +74,7 @@ Examples:
 ### **The GlobalManager “API” class provides the following methods:**
 
 
-**DownloadManager addDownloadManager(String fileName, String savePath)**
+### DownloadManager addDownloadManager(String fileName, String savePath)
 
  **Description:** Add torrent file to download manager.
   **Parameters:** A filename and path where it needs to be saved.
@@ -84,7 +84,7 @@ Examples:
     GlobalManager globalManager = core.getGlobalManager();
         globalManager.addDownloadManager(filename,pathToSave);
 
-**void addListener(GlobalManagerListener listener)**
+### void addListener(GlobalManagerListener listener)
 
 
  **Description:** Add listener to download manager, which initiates the download process.
@@ -95,17 +95,17 @@ Examples:
     DownloadManagerListener listener = new DownloadStateListener();
             manager.addListener(listener);
 
-**boolean canPauseDownloads()**
+### boolean canPauseDownloads()
 
  
  **Description:** Returns true if download can be paused, false otherwise.
 
-**boolean canResumeDownloads()**
+### boolean canResumeDownloads()
 
 
  **Description:** Returns true if download can be resumed, false otherwise.
 
-**void pauseDownloadsForPeriod(int seconds)**
+### void pauseDownloadsForPeriod(int seconds)
 
 
  **Description:** Pause download for specific period of time.
@@ -117,23 +117,23 @@ Examples:
  **Description:** Remove download manager.
  **Parameters:** DownloadManager.
 
-**DownloadManager getDownloadManager(TOTorrent torrent)**
+### DownloadManager getDownloadManager(TOTorrent torrent)
 
 
  **Description:** Get download manager for particular torrent.
  **Parameters:** TOTorrent.
 
-**void resumeDownloads()**
+### void resumeDownloads()
 
 
  **Description:** To resume downloads for current download manager.
 
-**void saveState()**
+### void saveState()
 
 
  **Description:** Save current state of download manager, which can be resumed later.
 
-**void startAllDownloads()**
+### void startAllDownloads()
 
 
  **Description:** Starts download from all download manager
@@ -142,7 +142,7 @@ Examples:
 
     globalManager.startAllDownloads();
 
-**void stopAllDownloads()**
+### void stopAllDownloads()
 
  **Description:** Stops download process from all download manager
 
@@ -150,7 +150,7 @@ Examples:
 
     globalManager.stopAllDownloads();
 
-**void stopGlobalManager()**
+### void stopGlobalManager()
 
 
  **Description:** Stops global manager.
@@ -160,68 +160,68 @@ Examples:
 ### **The DownloadManager “API” class provides the following methods:**
 
 
-**void addDiskListener(DownloadManagerDiskListener listener)**
+### void addDiskListener(DownloadManagerDiskListener listener)
 
  **Description:** DiskListener monitors the disk operations.
  **Parameters:** DownloadManagerDiskListener.
 
-**void addListener(DownloadManagerListener listener)**
+### void addListener(DownloadManagerListener listener)
 
  **Description:** Add listener to specific download manager, which initiates the download process.
  **Parameters:** DownloadManagerListener.
 
-**void addPeer(PEPeer peer)**
+### void addPeer(PEPeer peer)
 
  **Description:** Adds peers to current DownloadManager.
  **Parameters:** PEPeer.
 
-**void addPeerListener(DownloadManagerPeerListener listener)**
+### void addPeerListener(DownloadManagerPeerListener listener)
 
  **Description:** Add listener to peers to current DownloadManager.
 
-**File getSaveLocation()**
+### File getSaveLocation()
 
  **Description:** Returns the location where file is saved.
 
-**void saveResumeData()**
+### void saveResumeData()
 
  **Description:** Save the data after resume is initiated.
  **Parameters:** TOTorrent.
 
-**void startDownload()**
+### void startDownload()
 
  **Description:** Starts the download for loaded download manager.
 
 ### **The DiskManager “API” class provides the following methods:**
 
-**DiskManagerFileInfo[] getFiles()**
+### DiskManagerFileInfo[] getFiles()
 
  **Description:** Returns array all the files described in torrent meta-data.
 
-**DiskManagerFileInfoSet getFileSet()**
+### DiskManagerFileInfoSet getFileSet()
 
  **Description:** Returns set all the files in torrents meta-data.
 
-**long getSizeExcludingDND()**
+### long getSizeExcludingDND()
 
  **Description:** Returns the overall size of files, excluding the size of the files which won’t be downloaded.
 
-**void start()**
+### void start()
 
  **Description:** Turns on the downloading process.
 
-**boolean stop(boolean closing)**
+### boolean stop(boolean closing)
 
  **Description:** Stops downloading of files.
  **Parameters:** boolean.
 
-**boolean filesExist()**
+### boolean filesExist()
 
  **Description:** Returns true if file exists, otherwise false
 
 ### The TorrentEngine “API” class provides the following methods (static):
 
-**void download(String item)**
+### void download(String item)
 
  **Description:** Download the specified torrent or torrent collection.
  **Parameters:**
