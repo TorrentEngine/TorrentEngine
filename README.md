@@ -24,4 +24,4 @@ The software is developed in Java and is available at <https://github.com/wiperz
 
 The software can be used by any Java application and the available features of the software are provided below.
 
-     -   <http://torrentengine.readthedocs.io/en/latest/>
+<http://torrentengine.readthedocs.io/en/latest/>
