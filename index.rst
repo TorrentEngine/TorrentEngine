@@ -32,17 +32,14 @@ The GlobalManager "API" class provides the following methods:
 DownloadManager addDownloadManager(String fileName, String savePath)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 |  **Description:** Add torrent file to download manager.
-|  **Parameters:**
-|  		**item:** A filename and path where needs to be saved.
-
+|  **Parameters:** A filename and path where needs to be saved.
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 void addListener(GlobalManagerListener listener)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 |  **Description:** Add listener to download manager, which initiates the download process.
-|  **Parameters:**
-|  		**item:** GlobalManagerListener.
+|  **Parameters:** GlobalManagerListener.
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -61,8 +58,7 @@ boolean canResumeDownloads()
 void pauseDownloadsForPeriod(int seconds)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 |  **Description:** Pause download for specific period of time.
-|  **Parameters:**
-|  		**item:** int.
+|  **Parameters:** int.
 
 
 
@@ -70,8 +66,7 @@ void pauseDownloadsForPeriod(int seconds)
 void removeDownloadManager(DownloadManager manager)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 |  **Description:** Remove download manager.
-|  **Parameters:**
-|  		**item:** DownloadManager.
+|  **Parameters:** DownloadManager.
 
 
 
@@ -79,52 +74,134 @@ void removeDownloadManager(DownloadManager manager)
 DownloadManager getDownloadManager(TOTorrent torrent)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 |  **Description:** Get download manager for particular torrent.
-|  **Parameters:**
-|  		**item:** TOTorrent.
+|  **Parameters:** TOTorrent.
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-void resumeDownloads()  
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
+void resumeDownloads()
+^^^^^^^^^^^^^^^^^^^^^^
 |  **Description:** To resume download of torrent.
 
 
+^^^^^^^^^^^^^^^^
+void saveState()
+^^^^^^^^^^^^^^^^
+|  **Description:** Save current state of download, which can be used later to resume.
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^
+void startAllDownloads()
+^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Starts download from all download manager
+
+
+^^^^^^^^^^^^^^^^^^^^^^^
+void stopAllDownloads()
+^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Stops download from all download manager
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^
+void stopGlobalManager()
+^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Stops global manager.
+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 void addListener(GlobalManagerListener listener)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 |  **Description:** Add listener to download manager, which initiates the download process.
-|  **Parameters:**
-|  		**item:** GlobalManagerListener.
-
+|  **Parameters:** GlobalManagerListener.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 void addListener(GlobalManagerListener listener)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 |  **Description:** Add listener to download manager, which initiates the download process.
-|  **Parameters:**
-|  		**item:** GlobalManagerListener.
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-void addListener(GlobalManagerListener listener)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-|  **Description:** Add listener to download manager, which initiates the download process.
-|  **Parameters:**
-|  		**item:** GlobalManagerListener.
+|  **Parameters:** GlobalManagerListener.
 
  
-void resumeDownloads()  
-protected void saveDownloads(boolean immediate)  
-void saveState()  
-void startAllDownloads() 
-void stopAllDownloads()  
-void stopGlobalManager()  
+ """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+The DownloadManager "API" class provides the following methods:
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+void addDiskListener(DownloadManagerDiskListener listener)  
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** DiskListener monitors the disk operations.
+|  **Parameters:** DownloadManagerDiskListener.
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+void addListener(DownloadManagerListener listener)  
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Add listener to specific download manager, which initiates the download process.
+|  **Parameters:** DownloadManagerListener.
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+void addPeer(PEPeer peer) 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Adds peers to current DownloadManager.
+|  **Parameters:** PEPeer.
 
 
 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+void addPeerListener(DownloadManagerPeerListener listener)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Add listner to peers to current DownloadManager.
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File getSaveLocation()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Returns the location where file is saved.
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+void saveResumeData()  
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Save the data after resume is initiated.
+|  **Parameters:** TOTorrent.
+
+
+^^^^^^^^^^^^^^^^^^^^^^
+void startDownload() 
+^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Starts the download of torrent.
 
 
 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 The TorrentEngine "API" class provides the following methods (static):
