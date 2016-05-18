@@ -29,7 +29,7 @@ The software can be used by any Java application and the available features of t
 
 - `TorrentEngineCore <https://github.com/wiperz1789/Torrent-Engine/blob/master/index.rst#the-torrentenginecore-api-class-provides-the-following-methods>`_
 
-- `GlobalManager  <https://github.com/wiperz1789/To``rrent-Engine/blob/master/index.rst#the-globalmanager-api-class-provides-the-following-methods>`_
+- `GlobalManager  <https://github.com/wiperz1789/Torrent-Engine/blob/master/index.rst#the-globalmanager-api-class-provides-the-following-methods>`_
 
 - `DownloadManager <https://github.com/wiperz1789/Torrent-Engine/blob/master/index.rst#the-downloadmanager-api-class-provides-the-following-methods>`_
 
@@ -126,8 +126,6 @@ void addListener(GlobalManagerListener listener)
 |  **Description:** Add listener to download manager, which initiates the download process.
 |  **Parameters:** GlobalManagerListener.
 |
-
-
 
 Examples::
 
@@ -275,7 +273,7 @@ void startDownload()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-**The DiskManager "API" class provides the following methods (static):**
+**The DiskManager "API" class provides the following methods:**
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -364,4 +362,3 @@ Example::
 
 	list("noaa datasets");
 	list("551952d08103200cf5034fb74adf71643aa0c643");
-
