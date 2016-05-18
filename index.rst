@@ -74,8 +74,8 @@ void start()
 |  **Description:** Starts the main core of the engine
 
 Examples::
-	TorrentEngineCore core= AzureusCoreFactory.create();
-        core.start();
+         TorrentEngineCore core= AzureusCoreFactory.create();
+         core.start();
 
 
 ^^^^^^^^^^^
@@ -84,8 +84,9 @@ void stop()
 |  **Description:** If requestStop() fails to stop the core then, force stop is called.
 
 Examples::
-	TorrentEngineCore core= AzureusCoreFactory.create();
-           core.stop();
+
+        TorrentEngineCore core= AzureusCoreFactory.create();
+          core.stop();    
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -98,6 +99,7 @@ DownloadManager addDownloadManager(String fileName, String savePath)
 |  **Parameters:** A filename and path where it needs to be saved.
 
 Examples::
+
 	GlobalManager globalManager = core.getGlobalManager();
         globalManager.addDownloadManager(filename,pathToSave);
 
@@ -111,6 +113,7 @@ void addListener(GlobalManagerListener listener)
 
 
 Examples::
+
 	DownloadManagerListener listener = new DownloadStateListener();
             manager.addListener(listener);
 
@@ -167,6 +170,7 @@ void startAllDownloads()
 |  **Description:** Starts download from all download manager
 
 Examples::
+
         globalManager.startAllDownloads();
 
 
@@ -177,6 +181,7 @@ void stopAllDownloads()
 |  **Description:** Stops download process from all download manager
 
 Examples::
+
         globalManager.stopAllDownloads();
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
