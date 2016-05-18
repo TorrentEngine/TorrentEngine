@@ -33,7 +33,7 @@ The software can be used by any Java application and the available features of t
 
 - `DownloadManager <https://github.com/wiperz1789/Torrent-Engine/blob/master/index.rst#the-downloadmanager-api-class-provides-the-following-methods>`_
 
-- `DiskManager <https://github.com/wiperz1789/Torrent-Engine/blob/master/index.rst#the-diskmanager-api-class-provides-the-following-methods-static>`_
+- `DiskManager <https://github.com/wiperz1789/Torrent-Engine/blob/master/index.rst#the-diskmanager-api-class-provides-the-following-methods>`_
 
 - `TorrentEngine <https://github.com/wiperz1789/Torrent-Engine/blob/master/index.rst#the-torrentengine-api-class-provides-the-following-methods-static>`_
 
