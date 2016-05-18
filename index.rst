@@ -8,25 +8,123 @@ Torrents Engine
 Introduction
 ============
 
-The Torrents Engine is a software library that provides internet torrent download and peer functionality. It is designed to provide an
-easy to use API for donwloading and listing torrents.
+The Torrents Engine is a software library that provides internet torrent download and peer functionality.
 
-The project was founded by Dr. Joseph Cohen (The University of Massachusetts, Boston)
 
 |  Contributors:
-|      Henry Z. Lo (cofounder)
-|      Jonathan Nogueira (SmartNode and Architecture)
-|      Alpesh Kothari (Refactoring to Engine and Specific File Download)
-|      Greg McPherran (Refactoring to Engine, Module/Code Structure, and API Exposure Layer)
+|      Greg McPherran 
+|      Alpesh Kothari 
+
 
 ==================
 Using the Software
 ==================
 
 The software is developed in Java and is available at 
-https://github.com/CompCoder/Torrents-Engine/tree/master
+https://github.com/wiperz1789/Torrent-Engine/tree/master
 
-The software can be used by any Java application and the available features of the software are available via the TorrentEngine class. This class provides an "API" (see below) that provides various download and torrent directory listing capabilities including advanced features such as downloading only specific files from a torrent.
+The software can be used by any Java application and the available features of the software are provided below.
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+The GlobalManager "API" class provides the following methods:
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+DownloadManager addDownloadManager(String fileName, String savePath)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Add torrent file to download manager.
+|  **Parameters:**
+|  		**item:** A filename and path where needs to be saved.
+
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+void addListener(GlobalManagerListener listener)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Add listener to download manager, which initiates the download process.
+|  **Parameters:**
+|  		**item:** GlobalManagerListener.
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+boolean  canPauseDownloads()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** To check whether downlaod can be paused.
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+boolean canResumeDownloads()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** To check whether downlaod can be resumed.
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+void pauseDownloadsForPeriod(int seconds)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Pause download for specific period of time.
+|  **Parameters:**
+|  		**item:** int.
+
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+void removeDownloadManager(DownloadManager manager)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Remove download manager.
+|  **Parameters:**
+|  		**item:** DownloadManager.
+
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+DownloadManager getDownloadManager(TOTorrent torrent)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Get download manager for particular torrent.
+|  **Parameters:**
+|  		**item:** TOTorrent.
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+void resumeDownloads()  
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** To resume download of torrent.
+
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+void addListener(GlobalManagerListener listener)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Add listener to download manager, which initiates the download process.
+|  **Parameters:**
+|  		**item:** GlobalManagerListener.
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+void addListener(GlobalManagerListener listener)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Add listener to download manager, which initiates the download process.
+|  **Parameters:**
+|  		**item:** GlobalManagerListener.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+void addListener(GlobalManagerListener listener)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Add listener to download manager, which initiates the download process.
+|  **Parameters:**
+|  		**item:** GlobalManagerListener.
+
+ 
+void resumeDownloads()  
+protected void saveDownloads(boolean immediate)  
+void saveState()  
+void startAllDownloads() 
+void stopAllDownloads()  
+void stopGlobalManager()  
+
+
+
+
+
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 The TorrentEngine "API" class provides the following methods (static):
