@@ -10,7 +10,6 @@ Introduction
 
 The Torrents Engine is a software library that provides internet torrent download and peer functionality.
 
-The project was founded by Dr. Joseph Cohen (The University of Massachusetts, Boston)
 
 |  Contributors:
 |      Dr. Joseph Paul Cohen
@@ -38,6 +37,30 @@ The software can be used by any Java application and the available features of t
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 The TorrentEngineCore "API" class provides the following methods:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+^^^^^^^^^^^^
+void start()
+^^^^^^^^^^^^
+|  **Description:** Starts the main core of the engine
+
+Examples::
+
+         TorrentEngineCore core= AzureusCoreFactory.create();
+         core.start();
+
+
+^^^^^^^^^^^
+void stop()
+^^^^^^^^^^^
+|  **Description:** If requestStop() fails to stop the core then, force stop is called.
+
+Examples::
+
+        TorrentEngineCore core= AzureusCoreFactory.create();
+          core.stop();    
+
+
 ^^^^^^^^^^^^^^^^^^
 boolean canStart()
 ^^^^^^^^^^^^^^^^^^
@@ -68,25 +91,6 @@ void requestStop()
 |  **Description:** Normal core stop request.
 
 
-^^^^^^^^^^^^
-void start()
-^^^^^^^^^^^^
-|  **Description:** Starts the main core of the engine
-
-Examples::
-         TorrentEngineCore core= AzureusCoreFactory.create();
-         core.start();
-
-
-^^^^^^^^^^^
-void stop()
-^^^^^^^^^^^
-|  **Description:** If requestStop() fails to stop the core then, force stop is called.
-
-Examples::
-
-        TorrentEngineCore core= AzureusCoreFactory.create();
-          core.stop();    
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
