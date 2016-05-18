@@ -10,10 +10,13 @@ Introduction
 
 The Torrents Engine is a software library that provides internet torrent download and peer functionality.
 
+The project was founded by Dr. Joseph Cohen (The University of Massachusetts, Boston)
 
 |  Contributors:
-|      Greg McPherran 
-|      Alpesh Kothari 
+|      Dr. Joseph Paul Cohen
+|      Henry Z. Lo (cofounder)
+|      Greg McPherran (Refactoring to Engine, Module/Code Structure, and TorrentEngine API Exposure Layer)
+|      Alpesh Kothari (Refactoring to Engine and Specific File Download)
 
 
 ==================
@@ -25,6 +28,66 @@ https://github.com/wiperz1789/Torrent-Engine/tree/master
 
 The software can be used by any Java application and the available features of the software are provided below.
 
+- ``TorrentEngineCore``
+- ``GlobalManager``
+- ``DownloadManager``
+- ``DiskManager``
+- ``TorrentEngine``
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+The TorrentEngineCore "API" class provides the following methods:
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^
+boolean canStart()
+^^^^^^^^^^^^^^^^^^
+|  **Description:** Checks whether core can be started or not.
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+static boolean isCoreAvailable()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Returns true if core is available, false otherwise.
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+static boolean isCoreRunning()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Returns true if core is running, false otherwise.
+
+
+^^^^^^^^^^^^^^^^^^^^^^
+boolean isInitThread()
+^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Returns true if thread is initialized already, else false.
+
+
+^^^^^^^^^^^^^^^^^^
+void requestStop()
+^^^^^^^^^^^^^^^^^^
+|  **Description:** Normal core stop request.
+
+
+^^^^^^^^^^^^
+void start()
+^^^^^^^^^^^^
+|  **Description:** Starts the main core of the engine
+
+Examples::
+	TorrentEngineCore core= AzureusCoreFactory.create();
+        core.start();
+
+
+^^^^^^^^^^^
+void stop()
+^^^^^^^^^^^
+|  **Description:** If requestStop() fails to stop the core then, force stop is called.
+
+Examples::
+	TorrentEngineCore core= AzureusCoreFactory.create();
+           core.stop();
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 The GlobalManager "API" class provides the following methods:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -32,7 +95,11 @@ The GlobalManager "API" class provides the following methods:
 DownloadManager addDownloadManager(String fileName, String savePath)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 |  **Description:** Add torrent file to download manager.
-|  **Parameters:** A filename and path where needs to be saved.
+|  **Parameters:** A filename and path where it needs to be saved.
+
+Examples::
+	GlobalManager globalManager = core.getGlobalManager();
+        globalManager.addDownloadManager(filename,pathToSave);
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -42,16 +109,21 @@ void addListener(GlobalManagerListener listener)
 |  **Parameters:** GlobalManagerListener.
 
 
+
+Examples::
+	DownloadManagerListener listener = new DownloadStateListener();
+            manager.addListener(listener);
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 boolean  canPauseDownloads()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-|  **Description:** To check whether downlaod can be paused.
+|  **Description:** Returns true if download can be paused, false otherwise.
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 boolean canResumeDownloads()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-|  **Description:** To check whether downlaod can be resumed.
+|  **Description:** Returns true if download can be resumed, false otherwise.
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -80,13 +152,13 @@ DownloadManager getDownloadManager(TOTorrent torrent)
 ^^^^^^^^^^^^^^^^^^^^^^
 void resumeDownloads()
 ^^^^^^^^^^^^^^^^^^^^^^
-|  **Description:** To resume download of torrent.
+|  **Description:** To resume downloads for current download manager.
 
 
 ^^^^^^^^^^^^^^^^
 void saveState()
 ^^^^^^^^^^^^^^^^
-|  **Description:** Save current state of download, which can be used later to resume.
+|  **Description:** Save current state of download manager, which can be resumed later.
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -94,24 +166,24 @@ void startAllDownloads()
 ^^^^^^^^^^^^^^^^^^^^^^^^
 |  **Description:** Starts download from all download manager
 
+Examples::
+        globalManager.startAllDownloads();
+
+
 
 ^^^^^^^^^^^^^^^^^^^^^^^
 void stopAllDownloads()
 ^^^^^^^^^^^^^^^^^^^^^^^
-|  **Description:** Stops download from all download manager
+|  **Description:** Stops download process from all download manager
 
+Examples::
+        globalManager.stopAllDownloads();
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 void stopGlobalManager()
 ^^^^^^^^^^^^^^^^^^^^^^^^
 |  **Description:** Stops global manager.
 
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-void addListener(GlobalManagerListener listener)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-|  **Description:** Add listener to download manager, which initiates the download process.
-|  **Parameters:** GlobalManagerListener.
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -137,7 +209,6 @@ void addPeer(PEPeer peer)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 |  **Description:** Adds peers to current DownloadManager.
 |  **Parameters:** PEPeer.
-
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -175,7 +246,6 @@ DiskManagerFileInfo[] getFiles()
 |  **Description:** Returns array all the files described in torrent meta-data.
 	
 
-
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 DiskManagerFileInfoSet getFileSet()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -205,36 +275,6 @@ boolean stop(boolean closing)
 boolean filesExist()
 ^^^^^^^^^^^^^^^^^^^^
 |  **Description:** Returns true if file exists, otherwise false
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
