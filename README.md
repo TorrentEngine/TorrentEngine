@@ -12,9 +12,9 @@ Contributors:
      
      Alpesh Kothari (Refactoring to Engine and Specific File Download)
      
-     Dr. Joseph Paul Cohen
+     Joseph Paul Cohen PhD
      
-     Henry Z. Lo 
+     Henry Z. Lo PhD
      
      
 
@@ -30,4 +30,4 @@ The software can be used by any Java application and the available features of t
 Supervisors 
 -----------
 -  Joseph Paul Cohen PhD
--  Henry Z. Lo
+-  Henry Z. Lo PhD
