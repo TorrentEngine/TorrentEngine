@@ -113,42 +113,37 @@ void addListener(GlobalManagerListener listener)
 |  **Description:** Add listener to download manager, which initiates the download process.
 |  **Parameters:** GlobalManagerListener.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-void addListener(GlobalManagerListener listener)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-|  **Description:** Add listener to download manager, which initiates the download process.
-|  **Parameters:** GlobalManagerListener.
 
- 
- """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 The DownloadManager "API" class provides the following methods:
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-void addDiskListener(DownloadManagerDiskListener listener)  
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+void addDiskListener(DownloadManagerDiskListener listener)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 |  **Description:** DiskListener monitors the disk operations.
 |  **Parameters:** DownloadManagerDiskListener.
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-void addListener(DownloadManagerListener listener)  
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+void addListener(DownloadManagerListener listener)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 |  **Description:** Add listener to specific download manager, which initiates the download process.
 |  **Parameters:** DownloadManagerListener.
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-void addPeer(PEPeer peer) 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
+void addPeer(PEPeer peer)
+^^^^^^^^^^^^^^^^^^^^^^^^^
 |  **Description:** Adds peers to current DownloadManager.
 |  **Parameters:** PEPeer.
 
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 void addPeerListener(DownloadManagerPeerListener listener)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-|  **Description:** Add listner to peers to current DownloadManager.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Add listener to peers to current DownloadManager.
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -167,12 +162,51 @@ void saveResumeData()
 ^^^^^^^^^^^^^^^^^^^^^^
 void startDownload() 
 ^^^^^^^^^^^^^^^^^^^^^^
-|  **Description:** Starts the download of torrent.
+|  **Description:** Starts the download for loaded download manager.
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+The DiskManager "API" class provides the following methods (static):
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+DiskManagerFileInfo[] getFiles()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Returns array all the files described in torrent meta-data.
+	
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+DiskManagerFileInfoSet getFileSet()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Returns set all the files in torrents meta-data.
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+long getSizeExcludingDND()
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Returns the overall size of files, excluding the size of the files which won't be downloaded.
+
+
+^^^^^^^^^^^^
+void start()
+^^^^^^^^^^^^
+|  **Description:** Turns on the downloading process.
  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+boolean stop(boolean closing)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Stops downloading of files.
+|  **Parameters:** boolean.
  
+
+^^^^^^^^^^^^^^^^^^^^
+boolean filesExist()
+^^^^^^^^^^^^^^^^^^^^
+|  **Description:** Returns true if file exists, otherwise false
+ 
+
  
  
  
