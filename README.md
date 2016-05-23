@@ -1,10 +1,10 @@
-Torrents Engine
+TorrentEngine
 ===============
 
 Introduction
 ------------
 
-The Torrents Engine is a software library that provides internet torrent download and peer functionality.
+TorrentEngine is a Pure Java BitTorrent library that provides internet torrent download and peer functionality.
 
 Contributors:
      
