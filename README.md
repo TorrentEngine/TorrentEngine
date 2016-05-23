@@ -3,6 +3,8 @@ TorrentEngine
 
 TorrentEngine is a Pure Java BitTorrent library.  It provides all major features of BitTorrent libraries including magnet links, DHT, Web-Seeds, IPv6, UPnP, Peer Exchange, Encryption, and UDP Trackers. 
 
+The base code has been evolving over the years between builds of Gudy, Azureus, FrostWire, LimeWire, and Vuze. Because of this the code had become so complicated and redundant that it was hard to be taken seriously in industry. We refactored almost all major components and removed unused code. The resulting library is designed to be easy to understand and work with.
+
 Contributors:
      
      Greg McPherran (Refactoring to Engine, Module/Code Structure, and TorrentEngine API Exposure Layer)
