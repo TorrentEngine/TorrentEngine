@@ -7,15 +7,15 @@ The base code has been evolving over the years between builds of Gudy, Azureus, 
 
 Contributors:
      
-     Greg McPherran (Refactoring to Engine, Module/Code Structure, and TorrentEngine API Exposure Layer)
+     Alpesh Kothari      ak002 'at' cs.umb.edu
      
-     Alpesh Kothari (Refactoring to Engine and Specific File Download)
+     Greg McPherran      GMc 'at' compcodenet.com   
 
 Advisors:
 
-     Joseph Paul Cohen PhD
+     Joseph Paul Cohen PhD    joecohen 'at' cs.umb.edu
      
-     Henry Z. Lo PhD
+     Henry Z. Lo PhD     henryzlo 'at' cs.umb.edu
      
      
 
