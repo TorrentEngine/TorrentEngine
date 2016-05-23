@@ -24,6 +24,5 @@ Using the Software
 
 The software is developed in Java and is available at <https://github.com/TorrentEngine/TorrentEngine>
 
-The software can be used by any Java application and the available features of the software are provided below.
+Documentation <http://torrentengine.readthedocs.io/en/latest/>
 
-<http://torrentengine.readthedocs.io/en/latest/>
