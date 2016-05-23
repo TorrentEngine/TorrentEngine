@@ -23,7 +23,7 @@ Advisors:
 Using the Software
 ------------------
 
-The software is developed in Java and is available at <https://github.com/wiperz1789/Torrent-Engine/tree/master>
+The software is developed in Java and is available at <https://github.com/TorrentEngine/TorrentEngine>
 
 The software can be used by any Java application and the available features of the software are provided below.
 
