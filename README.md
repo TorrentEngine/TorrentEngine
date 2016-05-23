@@ -1,10 +1,7 @@
 TorrentEngine
 ===============
 
-Introduction
-------------
-
-TorrentEngine is a Pure Java BitTorrent library that provides internet torrent download and peer functionality.
+TorrentEngine is a Pure Java BitTorrent library.  It provides all major features of BitTorrent libraries including magnet links, DHT, Web-Seeds, IPv6, UPnP, Peer Exchange, Encryption, and UDP Trackers. 
 
 Contributors:
      
