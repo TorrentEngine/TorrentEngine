@@ -1,0 +1,38 @@
+<project name="TorrentEngine" default="jar" basedir=".">
+	<description>TorrentEngine</description>
+	<property name="src.dir" value="src" />
+	<property name="build.dir" value="build" />
+	<property name="lib" value="lib" />
+
+	<property name="classes.dir" value="${build.dir}/classes" />
+	<property name="jar.dir" value="${build.dir}/jar" />
+	<property name="jar.file.name" value="TorrentEngine-V0.9" />
+
+	<target name="init" depends="clean">
+		<mkdir dir="${build.dir}" />
+	</target>
+	<target name="clean">
+		<delete dir="build" />
+	</target>
+	<target name="compile" depends="init">
+		<mkdir dir="${classes.dir}" />
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" >
+			<classpath>
+				<fileset dir="${lib}">
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+	</target>
+	<target name="jar" depends="compile">
+		<mkdir dir="${jar.dir}" />
+		<jar destfile="${jar.dir}/${jar.file.name}.jar" basedir="${classes.dir}">
+			<manifest>
+				<attribute name="Main-Class" value="${main-class}" />
+			</manifest>
+			<zipgroupfileset dir="${lib}" includes="**/*.jar" />
+		</jar>
+
+	</target>
+
+</project>
