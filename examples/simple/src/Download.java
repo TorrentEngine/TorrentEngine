@@ -6,14 +6,12 @@ import java.io.IOException;
 import controller.GlobalManager;
 import torrentlib.AzureusCoreFactory;
 import torrentlib.TorrentEngineCore;
-import torrentlib.disk.DiskManagerFileInfo;
 import xfer.download.DownloadManager;
 import xfer.download.DownloadManagerListener;
 
 public class Download {
 
 	public static void main(String[] args) throws IOException {
-		
 		
 		TorrentEngineCore core = AzureusCoreFactory.create();
 		core.start();
