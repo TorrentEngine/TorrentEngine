@@ -27,9 +27,6 @@ public class DownloadEngine {
 
     public DownloadEngine() throws Exception {
 
-        System.setProperty("azureus.install.path", ConfigurationManager.TorrentDirectory);
-        System.setProperty("azureus.app.name", "ATDownloader");
-
         try {
             core = AzureusCoreFactory.create();
         } catch (Throwable re) {
